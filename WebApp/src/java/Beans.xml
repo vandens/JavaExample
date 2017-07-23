@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" 
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd" xmlns:websocket="http://www.springframework.org/schema/websocket">
+
+    <bean id = "helloWorld" class = "com.testpoint.HelloWorld">
+        <property name="message" value="hello wakwaw!!"/>
+    </bean>    
+    <bean id="helloWorld_Singleton" class="com.testpoint.HelloWorld" scope="singleton"></bean>
+    <bean id="helloWorld_prototype" class="com.testpoint.HelloWorld" scope="prototype"></bean>
+    <bean id="helloWorld_destroy" class="com.testpoint.HelloWorld"
+          init-method="init" destroy-method="destroy">
+          <property name="message" value="Hello World!"/>
+    </bean>
+    <bean id="helloWorld_init" class="com.testpoint.HelloWorld"
+          init-method="init" destroy-method="destroy">
+          <property name="message" value="Hello World!"/>
+    </bean>
+    <!-- untuk initializing
+    <bean class="com.testpoint.InitHelloWorld"/>
+    -->
+    
+    <!-- inheritance -->
+    <bean id="helloWorld_parents" class="com.testpoint.HelloWorld">
+        <property name="message1" value="hello World"/>
+        <property name="message2" value="Hello second world"/>
+    </bean>
+    <bean id="helloIndia_child" class="com.testpoint.HelloIndia" parent="helloWorld_parents">
+        <property name="message1" value="Hello India"/>
+        <property name="message3" value="NameState India"/>
+    </bean>
+    <!-- end inheritance -->
+    
+    <!-- beanTemplate -->
+    <!--
+    <bean id="beanTemplate" abstract="true">
+        <property name="message1" value="Hello World"/>
+        <property name="message2" value="Hello Second World"/>
+        <property name="message3" value="NameState India"/>
+    </bean>
+    <bean id="helloIndia" class="com.testpoint.HelloWorld" parent="beanTemplate">
+        <property name="message1" value="Hello India!"/>
+        <property name="message3" value="Namestate Hindi!"/>
+    </bean>
+    -->
+   <!-- end beanTemplate -->
+    
+    <!-- definition for textEditor bean -->
+    <bean id="textEditor" class="com.testpoint.TextEditor">
+        <constructor-arg ref="spellChecker"/>
+    </bean>
+    <!-- definition for spellchecker bean -->
+    <bean id="spellChecker" class="com.testpoint.SpellChecker"></bean>
+    
+    
+    <!--
+    simple bean configuration
+    <bean id=".." class="...">
+        collaborators and configuration for this bean go here
+    </bean>
+    
+    A bean definition with lazy init set on
+    <bean id=".." class="..." lazy-init="true">
+        collaborators and configuration for this bean go here
+    </bean>
+    
+    A bean definition with initialization method
+    <bean id=".." class="..." init-method="...">
+        collaborators and configuration for this bean go here
+    </bean>
+    
+    A bean definition with destruction method
+    <bean id=".." class="..." destroy-method="...">
+        collaborators and configuration for this bean go here
+    </bean>
+    -->
+    
+    
+</beans>

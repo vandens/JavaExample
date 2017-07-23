@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+
+        <context:annotation-config/>
+        
+        <!-- annobaserequired -->
+        <bean id="annobaserequired" class="com.testpoint.annobaseconfig.Student_Setter">
+            <property name="name" value="Vandens"/>
+            <!-- try without passing age and check the result -->
+            <property name="age" value="11"/>
+        </bean>
+        <!-- annobaserequired -->
+        
+        <!-- AnnoBaseAutowiredSetter -->
+        <bean id="AnnoBaseAutowiredSetter" class="com.testpoint.annobaseconfig.TextEditor_Setter"></bean>
+        <bean id="spellChecker" class="com.testpoint.annobaseconfig.SpellChecker"></bean>
+        
+        
+        <!-- annobaseconstructor -->
+        <bean id ="AnnoBaseAutowiredConstructor" class="com.testpoint.annobaseconfig.TextEditor_byConstructor"></bean>
+        <!-- spellchecker nya sama dengan spellChecker di AnnoBaseAutowiredSetter -->
+
+        <!-- AnnoBaseAutowiredQualifier -->
+        <bean id="AnnoBaseAutowiredQualifier" class="com.testpoint.annobaseconfig.Profile_Qualifier">
+            
+        </bean>
+        <bean id="student_qualifier1" class="com.testpoint.annobaseconfig.Student_Qualifier">
+            <property name="name" value="Vandens"/>
+            <property name="age" value="17"/>
+        </bean>
+        <bean id="student_qualifier2" class="com.testpoint.annobaseconfig.Student_Qualifier">
+            <property name="name" value="mc Maddens"/>
+            <property name="age" value="12"/>
+        </bean>
+        
+        <bean id="PostConstructnPreDestroy"
+              class="com.testpoint.annobaseconfig.HelloWorld"
+              init-method="init" destroy-method="destroy">
+              <property name="message" value="Halloww Dunia!!"/>
+        </bean>
+</beans>

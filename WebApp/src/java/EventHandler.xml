@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <bean id="HelloWorld_EventHandle" class="com.testpoint.EventHandle.HelloWorld_EventHandle">
+        <property name="message" value="Hallow Duniahh"/>
+    </bean>
+    <bean id="cStart_EventHandler" class="com.testpoint.EventHandle.CStart_EventHandler"/>
+    <bean id="cStop_EventHandler" class="com.testpoint.EventHandle.CStop_EventHandler"/>
+
+    <bean id="customEventHandler" class="com.testpoint.EventHandle.CustomEventHandler"/>
+    <bean id="customEventPublisher" class="com.testpoint.EventHandle.CustomEventPublisher"/>
+</beans>
