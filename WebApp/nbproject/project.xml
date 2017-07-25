@@ -34,6 +34,30 @@
                     <file>${file.reference.aspectj-1.6.9.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
+                <library dirs="200">
+                    <file>${file.reference.log4j-1.2.8.jar-1}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.mysql-connector-java-5.1.34-bin.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.aspectj-1.6.9.jar-1}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.aspectjrt.jar-1}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.com.springsource.org.aopalliance-1.0.0.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.aspectjweaver-1.6.2.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
             <source-roots>
@@ -50,6 +74,8 @@
                 <config-file>src/java/annobaseconfig.xml</config-file>
                 <config-file>src/java/EventHandler.xml</config-file>
                 <config-file>src/java/AOP.xml</config-file>
+                <config-file>src/java/jdbcF.xml</config-file>
+                <config-file>src/java/jdbcTx.xml</config-file>
             </config-files>
             <config-file-groups>
                 <config-file-group name="Default Group">

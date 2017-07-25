@@ -53,7 +53,7 @@ public class MainApp {
     }
     
     public static void main(String[] args){
-        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
         //AnnoBaseRequired();
         //AnnoBaseAutowiredSetter();
         //AnnoBaseAutowiredConstructor();
